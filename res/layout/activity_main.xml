@@ -1,0 +1,18 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+   	xmlns:quilt="http://schemas.android.com/apk/res/com.jake.quiltview"
+    android:id="@+id/FrameLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <com.jake.quiltview.QuiltView
+        android:id="@+id/quilt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dip"
+        quilt:scrollOrientation="horizontal" >
+
+    </com.jake.quiltview.QuiltView>
+
+</FrameLayout>
