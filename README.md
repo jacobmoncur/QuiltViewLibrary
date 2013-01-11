@@ -1,10 +1,8 @@
 # QuiltViewLibrary
 
-This is the beautiful QuiltView
+QuiltView is a view that displays **views of different sizes** in a **scrollable grid**.
 
-![quilt](https://raw.github.com/jacobmoncur/QuiltViewLibrary/master/quilt.png "QuiltView") ![quilt](https://raw.github.com/jacobmoncur/QuiltViewLibrary/master/quilt_horz.png "QuiltView")
-
-# Using This Library
+![quilt](https://raw.github.com/jacobmoncur/QuiltViewLibrary/master/quilt_horz.png "QuiltView")
 
 Dependencies
 ------------
@@ -13,7 +11,7 @@ This library depends on gridlayout_v7 (https://github.com/Ponyets/Trifles/tree/m
 Setup
 -----
 
-The QuiltView can be defined in XML:
+The QuiltView can be defined by XML:
 
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -32,11 +30,10 @@ The QuiltView can be defined in XML:
     
     </FrameLayout>
     
-Or in code
+Or programmatically
     
     boolean isVertical = true|false; //defines which direction the QuiltView will scroll: true = Vertical, false = Horizontal
-    
-    QuiltView quiltView = new QuiltView(context, isVertical);
+    QuiltView quiltView = new QuiltView(context, isVertical); //(QuiltView) findViewById(R.id.quilt);
     
     
 Adding Children
@@ -61,5 +58,17 @@ Or an ArrayList of Views
     	views.add(patch);
     }
     quiltView.addPatchViews(views);
+
+Goals for this view
+-------------------
+* Have no _empty_ patches
+* Be sudo-random (lays out the children differently each time)
+* Looks awesome!
+
+TODO
+----
+* Custom Adapter to allow view recycling
+* Be able to define children in XML
+* Adapt better to different screen sizes
 
 
