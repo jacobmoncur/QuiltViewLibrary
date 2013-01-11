@@ -2,7 +2,7 @@
 
 This is the beautiful QuiltView
 
-![quilt](http://dl.dropbox.com/u/36133003/quilt.png "QuiltView")
+![quilt](https://raw.github.com/jacobmoncur/QuiltViewLibrary/master/quilt.png "QuiltView") ![quilt](https://raw.github.com/jacobmoncur/QuiltViewLibrary/master/quilt_horz.png "QuiltView")
 
 # Using This Library
 
@@ -57,7 +57,7 @@ Or an ArrayList of Views
 
     ArrayList<View> views = new ArrayList<View>();
     for(int i = 0; i < num; i++){
-      FrameLayout patch = new FrameLayout(this.getApplicationContext());
+        FrameLayout patch = new FrameLayout(this.getApplicationContext());
     	views.add(patch);
     }
     quiltView.addPatchViews(views);
