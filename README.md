@@ -39,7 +39,7 @@ Or programmatically
 Adding Children
 ---------------
 
-Children must be added to The QuiltView programmatically as an ArrayList of ImageViews:
+Children must be added to the QuiltView programmatically as an ArrayList of ImageViews:
 
     ArrayList<ImageView> images = new ArrayList<ImageView>();
     for(int i = 0; i < num; i++){
