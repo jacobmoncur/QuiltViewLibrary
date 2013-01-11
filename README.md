@@ -6,7 +6,7 @@ QuiltView is a view that displays **views of different sizes** in a **scrollable
 
 Dependencies
 ------------
-This library depends on gridlayout_v7 (https://github.com/Ponyets/Trifles/tree/master/gridlayout_v7)
+This library depends on gridlayout_v7 (git@github.com:jacobmoncur/gridlayout_v7.git)
 
 Setup
 -----
