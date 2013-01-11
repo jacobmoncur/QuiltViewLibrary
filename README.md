@@ -1,6 +1,6 @@
 # QuiltViewLibrary
 
-QuiltView is a view that displays **views of different sizes** in a **scrollable grid**.
+QuiltView displays **views of different sizes** in a **scrollable grid**.
 
 ![quilt](https://raw.github.com/jacobmoncur/QuiltViewLibrary/master/nexus7.png "QuiltView") ![quilt](https://raw.github.com/jacobmoncur/QuiltViewLibrary/master/nexus7_mayer.png "QuiltView")
 
