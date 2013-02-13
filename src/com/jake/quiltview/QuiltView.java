@@ -1,19 +1,14 @@
 package com.jake.quiltview;
 import java.util.ArrayList;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Point;
-import android.graphics.Rect;
+import android.database.DataSetObserver;
 import android.util.AttributeSet;
-import android.util.DisplayMetrics;
-import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
-import android.view.Window;
-import android.view.WindowManager;
+import android.widget.Adapter;
 import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
@@ -28,6 +23,7 @@ public class QuiltView extends FrameLayout implements OnGlobalLayoutListener {
 	public int padding = 5;
 	public boolean isVertical = false;
 	public ArrayList<View> views;
+	private Adapter adapter;
 	
 	public QuiltView(Context context,boolean isVertical) {
 		super(context);
@@ -63,6 +59,35 @@ public class QuiltView extends FrameLayout implements OnGlobalLayoutListener {
 		scroll.addView(quilt);
 		this.addView(scroll);
 		
+	}
+	
+	private DataSetObserver adapterObserver = new DataSetObserver(){
+		public void onChanged(){
+			super.onChanged();
+			onDataChanged();
+		}
+		
+		public void onInvalidated(){
+			super.onInvalidated();
+			onDataChanged();
+		}
+		
+		public void onDataChanged(){
+			setViewsFromAdapter(adapter);
+		}
+	};
+	
+	public void setAdapter(Adapter adapter){
+		this.adapter = adapter;
+		adapter.registerDataSetObserver(adapterObserver);
+		setViewsFromAdapter(adapter);
+	}
+
+	private void setViewsFromAdapter(Adapter adapter) {
+		this.removeAllViews();
+		for(int i = 0; i < adapter.getCount(); i++){
+			quilt.addPatch(adapter.getView(i, null, quilt));
+		}
 	}
 	
 	public void addPatchImages(ArrayList<ImageView> images){
