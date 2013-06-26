@@ -19,7 +19,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		quiltView = (QuiltView) findViewById(R.id.quilt);
 		quiltView.setChildPadding(5);
-		addTestQuilts(20);
+		addTestQuilts(200);
 	}
 	
 	public void addTestQuilts(int num){
