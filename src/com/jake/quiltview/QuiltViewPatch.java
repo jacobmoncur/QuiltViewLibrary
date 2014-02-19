@@ -80,13 +80,13 @@ public class QuiltViewPatch implements Comparable{
 		case 10:
 			return create(Size.Small);
 		case 11:
-			return create(Size.Big);
+			return create(Size.Small);
 		case 12:
-			return create(Size.Tall);
+			return create(Size.Big);
 		case 13:
 			return create(Size.Tall);
 		case 14:
-			return create(Size.Small);
+			return create(Size.Tall);
 		}
 		
 		return create(Size.Small);
